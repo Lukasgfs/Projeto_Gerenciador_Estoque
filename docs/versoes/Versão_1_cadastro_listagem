@@ -1,0 +1,94 @@
+
+
+te = 'Controle de estoque'
+print(te.center(20))
+linha = '=' * 67
+linha2 = '=' * 67 + '\n'
+tex = 'Cadastro do medicamento'
+
+
+print(linha)
+print(te.center(70))
+print(linha2)
+
+medicamentos = []
+
+medicamento = {
+    'nome': 'Dipirona 500mg',
+    'preço': 8.90,
+    'quantidade': 5,
+    'fabricante': 'Medley',
+    'p_ativo': 'Dipirona',
+}
+medicamentos.append(medicamento)
+
+medicamento = {
+    'nome': 'Paracetamol 750mg',
+    'preço': 6.25,
+    'quantidade': 50,
+    'fabricante': 'Medley',
+    'p_ativo':'Paracetamol',
+}
+medicamentos.append(medicamento)
+
+op = ''
+while op != '4':
+    print(' 1 - Cadastrar produto')
+    print(' 2 - Lista cadastrada')
+    print(' 3 - Acesso administrador')
+    print(' 4 - Sair')
+    op = input('Escolha uma função: ')
+    if op == '1':
+        print('\n Abrindo cadastro de produto')
+        print(linha)
+        print(tex.center(60))
+        print(linha2)
+        nome = input('Digite o nome do medicamento: ')
+        preço = float(input('Digite o preço: '))
+        quantidade = int(input('Digite a quantidade em ml ou unidades: '))
+        fabricante = input('Digite o nome do Fabricante: ')
+        p_ativo = input('Digite o princípio ativo: ')
+        print('Nome:',nome) 
+        print(f'Preço: R$ {preço:.2f}') 
+        print('Quantidade:', quantidade) 
+        print('Fabricante:',fabricante)
+        print('Princípio ativo:',p_ativo)
+        novo_item = {
+            'nome': nome,
+            'preço': preço,
+            'quantidade': quantidade,
+            'fabricante': fabricante,
+            'p_ativo': p_ativo
+        }
+        medicamentos.append(novo_item)
+        print()
+
+    elif op == '2':
+        print('\nAbrindo lista de produtos cadastrados\n')
+        for medica in medicamentos:
+            print('Nome: ',medica['nome'])
+            print(f"Preço: R$ {medica['preço']:.2f}")
+            print('Quantidade: ',medica['quantidade'])
+            print('Fabricante: ',medica['fabricante'])
+            print('Princípio ativo: ',medica['p_ativo'])
+            print(linha2)
+
+    elif op == '3':
+        total_estoque = 0
+        print('\nAcessando dados internos\n')
+        for medica in medicamentos:
+            valor_estoque = medica['preço'] * medica['quantidade']
+            print(f"Medicamento: {medica['nome']}")
+            print(f"Valor em estoque: R$ {valor_estoque:.2f}")
+            print(linha2)
+            total_estoque += valor_estoque
+
+        print(f'O valor total em estoque é: R${total_estoque:.2f}')
+        print(linha2)
+
+    elif op == '4':
+        print('\n Saindo do sistema')
+    else:
+        print('\n Opção inválida')
+
+
