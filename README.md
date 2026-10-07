@@ -18,3 +18,7 @@ com foco na aplicação prática dos fundamentos da linguagem Python.
 ## Tecnologias utilizadas
 
 - Python 3
+
+## Status do projeto
+
+Em desenvolvimento.
