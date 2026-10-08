@@ -18,7 +18,8 @@ medicamento = {
     'preço': 8.90,
     'quantidade': 5,
     'fabricante': 'Medley',
-    'p_ativo': 'Dipirona',
+    'lote': 'abc123',
+    'validade': '12/2027',
 }
 medicamentos.append(medicamento)
 
@@ -27,7 +28,8 @@ medicamento = {
     'preço': 6.25,
     'quantidade': 50,
     'fabricante': 'Medley',
-    'p_ativo':'Paracetamol',
+    'lote': 'abc456',
+    'validade': '12/2027',
 }
 medicamentos.append(medicamento)
 
@@ -61,17 +63,17 @@ def cadastro_med():
                 try:
                     preço = float(preço)
                     if preço <= 0:
-                        print('Valor inválido! Digite um valor maior que zero.')
+                        print('Valor inválido! Digite um valor maior que zero, use ponto.')
                     else:
                         break
                 except ValueError:
-                    print('Valor inválido! Por favor, digite um número positivo.')
+                    print('Por favor, digite um número positivo, use ponto.')
             if sair:
                     break
             
             sair = False
             while True:
-                quantidade = input('Digite a quantidade em ml ou unidades: ')
+                quantidade = input('Digite a quantidade na menor unidade comercializada: ')
                 if quantidade == '000':
                     sair = True
                     break
@@ -101,28 +103,42 @@ def cadastro_med():
 
             sair = False
             while True:
-                p_ativo = input('Digite o princípio ativo: ')
-                if p_ativo == '000':
+                lote = input('Digite o lote: ')
+                if lote == '000':
                     sair = True
                     break
-                if p_ativo.strip() == '':
-                    print('Princípio ativo inválido! Por favor, digite um nome válido.')
+                if lote.strip() == '':
+                    print('Lote inválido! Por favor, digite um nome válido.')
                 else:
                     break
             if sair:
                 break
 
+            sair = False
+            while True:
+                validade = input('Digite a validade: ')
+                if validade == '000':
+                    sair = True
+                    break
+                if validade.strip() == '':
+                    print('Validade inválida! Por favor, digite uma data válida.')
+                else:
+                    break
+            if sair:
+                break
             print('Nome:',nome) 
             print(f'Preço: R$ {preço:.2f}') 
             print('Quantidade:', quantidade) 
             print('Fabricante:',fabricante)
-            print('Princípio ativo:',p_ativo)
+            print('Lote:',lote)
+            print('Validade:',validade)
             novo_item = {
                 'nome': nome,
                 'preço': preço,
                 'quantidade': quantidade,
                 'fabricante': fabricante,
-                'p_ativo': p_ativo
+                'lote': lote,
+                'validade': validade
             }
             medicamentos.append(novo_item)
 
@@ -135,7 +151,8 @@ def consulta(medica):
     print(f"Preço: R$ {medica['preço']:.2f}")
     print('Quantidade: ',medica['quantidade'])
     print('Fabricante: ',medica['fabricante'])
-    print('Princípio ativo: ',medica['p_ativo'])
+    print('Lote: ',medica['lote'])
+    print('Validade: ',medica['validade'])
     print(linha2)
 
 def senhas():
