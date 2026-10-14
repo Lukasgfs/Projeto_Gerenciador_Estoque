@@ -1,10 +1,10 @@
-# Controle de Estoque
 
+## Controle de estoque focado em medicamentos
 Sistema de controle de estoque desenvolvido em Python.
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido como forma de aprendizado em programação,
+Este projeto foi desenvolvido como forma de fixação do aprendizado em programação,
 com foco na aplicação prática dos fundamentos da linguagem Python.
 
 ## Funcionalidades
@@ -18,6 +18,8 @@ com foco na aplicação prática dos fundamentos da linguagem Python.
 ## Tecnologias utilizadas
 
 - Python 3
+- Git
+- Github
 
 ## Status do projeto
 
