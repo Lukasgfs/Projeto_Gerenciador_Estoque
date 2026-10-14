@@ -141,6 +141,16 @@ def cadastro_med():
                 'validade': validade
             }
             medicamentos.append(novo_item)
+            print('\nMedicamento cadastrado com sucesso!')
+
+            while True:
+                continuar = input('\nDeseja cadastrar outro medicamento? (Sim/Não): ').strip().upper()
+                if continuar == 'SIM':
+                    break
+                elif continuar == 'NÃO' or continuar == 'nao':
+                    return
+                else:
+                    print('Opção inválida! Digite Sim para cadastrar novo produto ou Não para sair.')
 
 def listagem():
       for medica in medicamentos:
@@ -216,5 +226,10 @@ while op != '4':
 
 
 
+## listar por ordem de validade 
+## validade aceitar apenas datas a partir de hoje 
+## começar a aprender testes automatizados em Python
+## não aceitar cadastro duplicado basado no mesmo lote e validade
+## testes automatizados 
 
 
