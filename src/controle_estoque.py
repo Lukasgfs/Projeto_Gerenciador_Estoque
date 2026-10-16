@@ -1,15 +1,7 @@
-
-
 te = 'Controle de estoque'
-print(te.center(20))
 linha = '=' * 67
 linha2 = '=' * 67 + '\n'
 tex = 'Cadastro do medicamento'
-
-
-print(linha)
-print(te.center(70))
-print(linha2)
 
 medicamentos = []
 
@@ -195,33 +187,42 @@ def total_estoques_produtos():
         total_estoque += total_item(medica)
     print(f'O valor total em estoque é: R${total_estoque:.2f}')
     print(linha2)
+    return total_estoque
+    
 
-op = ''
-while op != '4':
-    try:
-        print(' 1 - Cadastrar produto')
-        print(' 2 - Lista cadastrada')
-        print(' 3 - Acesso administrador')
-        print(' 4 - Sair')
-        op = input('Escolha uma função: ')
-        if op == '1':
-            cadastro_med()
-            print()
-        elif op == '2':
-            print('\nAbrindo lista de produtos cadastrados\n')
-            listagem()
-        elif op == '3':
-            senhas()
-        elif op == '4':
-            print('\n Saindo do sistema')
-        else:
-            print('\n Opção inválida')
+def main():
+    print(te.center(20))
+    print(linha)
+    print(te.center(70))
+    print(linha2)
 
-    except Exception as erro:
-        print('\nOcorreu um erro inesperado.')
-        print(f'Erro: {erro}')
-        print('Voltando ao menu principal...')
+    op = ''
+    while op != '4':
+        try:
+            print(' 1 - Cadastrar produto')
+            print(' 2 - Lista cadastrada')
+            print(' 3 - Acesso administrador')
+            print(' 4 - Sair')
+            op = input('Escolha uma função: ')
+            if op == '1':
+                cadastro_med()
+                print()
+            elif op == '2':
+                print('\nAbrindo lista de produtos cadastrados\n')
+                listagem()
+            elif op == '3':
+                senhas()
+            elif op == '4':
+                print('\n Saindo do sistema')
+            else:
+                print('\n Opção inválida')
 
+        except Exception as erro:
+            print('\nOcorreu um erro inesperado.')
+            print(f'Erro: {erro}')
+            print('Voltando ao menu principal...')
+if __name__ == '__main__':
+    main()
 
 
 
